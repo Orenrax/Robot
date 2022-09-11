@@ -6,6 +6,26 @@ public class Main {
     public static void main(String[] args) {
 //        Robot robot = new Robot(10, -20, Direction.DOWN);
 //        moveRobot(robot, 0, 0);
+        Cat barsik = new Cat();
+        barsik.age = 3;
+        barsik.name = "Барсик";
+
+        barsik.sayMeow();
+        barsik.jump();
+
+        Person tech1 = new Person("Al");
+        Person tech2 = new Person("Vova");
+        Person manager = new Person("Vasya");
+        String tech1Name =tech1.getName();
+        String managerName = manager.getName();
+        tech1.hello();
+        tech1.display();
+
+
+    }
+    static class Work {
+
+
 
     }
 
@@ -124,31 +144,44 @@ public class Main {
 //            System.out.println(x+" "+y + " " + robot.getDirection());
     }
 
-    class Person {
+    public static class Person {
+
 
         String name;
-        public String getName(){ return name; }
-
         public Person(String name){
 
             this.name=name;
+        }
+        public String getName(){
+
+            return name;
         }
 
         public void display(){
 
             System.out.println("Name: " + name);
         }
-    }
-//    class Employee extends Person{
-//        public Employee(String name){
-//            super(name);    // если базовый класс определяет конструктор
-//            //  то производный класс должен его вызвать
-//        }
-//    }
-    //class Work {
-        Person Al = new Person("AL");
+        public void hello(){
 
-    //}
+            System.out.println("Hello");
+        }
+
+
+    }
+
+    public static class Cat {
+
+        String name;
+        int age;
+
+        public void sayMeow() {
+        System.out.println("Мяу!");
+        }
+
+        public void jump() {
+        System.out.println("Прыг-скок!");
+        }
+    }
 }
 
 
